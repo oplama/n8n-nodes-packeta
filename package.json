@@ -1,0 +1,61 @@
+{
+	"name": "n8n-nodes-packeta",
+	"version": "1.2.0",
+	"description": "n8n node for Packeta (Zásilkovna) shipping API",
+	"keywords": [
+		"n8n-community-node-package",
+		"packeta",
+		"zasilkovna",
+		"shipping",
+		"logistics",
+		"delivery"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/oplama/n8n-nodes-packeta",
+	"author": {
+		"name": "Oplama",
+		"email": "support@oplama.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/oplama/n8n-nodes-packeta.git"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier nodes credentials --write",
+		"lint": "eslint nodes credentials",
+		"lintfix": "eslint nodes credentials --fix",
+		"prepublishOnly": "npm run build"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/PacketaApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Packeta/Packeta.node.js"
+		]
+	},
+	"devDependencies": {
+		"@types/node": "^20.10.0",
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"eslint": "^8.56.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.1",
+		"gulp": "^4.0.2",
+		"n8n-workflow": "*",
+		"prettier": "^3.1.0",
+		"typescript": "^5.3.0"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"dependencies": {
+		"xml2js": "^0.6.2"
+	}
+}
